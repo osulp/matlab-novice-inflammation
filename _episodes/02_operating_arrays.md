@@ -118,6 +118,25 @@ ans =
 
 ## Vector indexing
 
+We can also refer to the items in a matrix by using only one index. In this case Matlab is treating the array as if the elements in the Matrix were strung out in a long column vector, by going down the columns consecutively, as in:
+
+
+~~~
+16
+5
+9
+4
+2
+11
+7
+14
+3
+10
+...
+~~~
+{: .language-matlab}
+
+
 
 
 ## Linear indexing
@@ -125,3 +144,6 @@ ans =
 ## Logical indexing
 
 # Matrix operations
+
+
+NOTE: explanations and figures of this lesson have been taken from the [Matrix Indexing in Matlab article](https://www.mathworks.com/company/newsletters/articles/matrix-indexing-in-matlab.html)
