@@ -19,7 +19,7 @@ Unlike in other programming languages, Matlab does not require you to declare th
 # Matrix indexing
 
 There are three ways of accessing the elements of a matrix with Matlab. 
-* Vector indexing: using two subscripts by giving the (row, column) coordinates. 
+* Indexing with two subscripts: using two subscripts by giving the (row, column) coordinates. 
 * Linear indexing: using only one index for each element of the matrix.
 * Logical indexing: using an array the same size as the original array, with 0 (do not select) and 1 (do select). 
 
@@ -39,6 +39,8 @@ M =
      4    14    15     1
 ~~~
 {: .output}
+
+## Indexing with two subscripts
 
 We want to access a single value from the matrix. For example, number 15 which is in row 4 and column 3. The element can be selected providing the index in parenthesis.
 
