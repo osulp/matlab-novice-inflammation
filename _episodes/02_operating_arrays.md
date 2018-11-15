@@ -116,7 +116,7 @@ ans =
 {: .output}
 
 
-## Vector indexing
+## Linear indexing
 
 We can also refer to the items in a matrix by using only one index. In this case Matlab is treating the array as if the elements in the Matrix were strung out in a long column vector, by going down the columns consecutively, as in:
 
@@ -136,10 +136,33 @@ We can also refer to the items in a matrix by using only one index. In this case
 ~~~
 {: .language-matlab}
 
+So, the ninth element in that array will be the number 3.
 
+~~~
+>> M(9)
+~~~
+{: .language-matlab}
 
+~~~
+ans =
 
-## Linear indexing
+     3
+~~~
+{: .output}
+
+We can use a vector of indices to select elements in a matrix:
+
+~~~
+>> M([5,8,16])
+~~~
+{: .language-matlab}
+
+~~~
+ans =
+
+     2    14     1
+~~~
+{: .output}
 
 ## Logical indexing
 
