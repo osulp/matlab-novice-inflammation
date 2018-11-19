@@ -12,3 +12,14 @@ keypoints:
 - "Matlab help is a great tool"
 - "Build your community"
 ---
+
+## At OSU:
+**CHE 581: Introduction to Numerical Methods Using MATLAB**.  The course is designed for graduate students (although well-prepared undergraduate students can take it too…) with minimal previous experience with programming or MATLAB.  The course focuses on (1) Learning how to develop basic programming skills (using MATLAB) such as looping and decision statements, and (2) development of a suite of numerical methods and techniques that can be helpful in research.  Specific topics include:
+- Programming in MATLAB
+- Plotting
+- Numerical differentiation
+- Numerical integration
+- Numerical solutions to ODEs
+- Finite-difference approximations for PDEs
+
+The course is open to students across campus who are of gradate standing (or with permission).  Familiarity with basic calculus, ordinary differential equations,  and linear algebra will be expected. 
