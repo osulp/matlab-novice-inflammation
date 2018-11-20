@@ -110,6 +110,7 @@ a line graph of those values.
 The result is roughly a linear rise and fall,
 which is suspicious:
 based on other studies, we expect a sharper rise and slower fall.
+<!---
 Let's have a look at two other statistics: the maximum and minimum
 inflammation per day across all patients.
 
@@ -131,6 +132,7 @@ inflammation per day across all patients.
 >> xlabel('Day of trial')
 ~~~
 {: .language-matlab}
+-->
 
 ![Minumum inflammation]({{ page.root }}/fig/min-inflammation.png)
 
