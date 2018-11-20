@@ -248,6 +248,7 @@ Let's work on plotting this information, now.
 > > title('Daily average inflammation')
 > > xlabel('Day of trial')
 > > ylabel('Inflammation')
+> {: .solution}
 >
 > Why are the vertical lines in our plot of the minimum inflammation per day 
 > not perfectly vertical?
