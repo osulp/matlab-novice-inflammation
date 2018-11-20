@@ -236,6 +236,19 @@ Let's work on plotting this information, now.
 > > against index 1, the second y-value against 2 etc.
 > {: .solution}
 >
+> Let's imagine that the data were not taken at regular intervals of one day, but
+> pretend that inflammation was measured once a day during the first 20 days 
+> and every other day for the last 40 days. We can create this vector by using the following  
+> commands:
+> xvector = [[1:20],[22:2:60]];
+> Can you plot patient_mean vs the new time vector? Hint: check `help plot`
+>
+> > ## Solution
+> > plot(xvector,patient_mean)
+> > title('Daily average inflammation')
+> > xlabel('Day of trial')
+> > ylabel('Inflammation')
+>
 > Why are the vertical lines in our plot of the minimum inflammation per day 
 > not perfectly vertical?
 >
