@@ -4,12 +4,13 @@ teaching: 30
 exercises: 0
 questions:
 - "How can I access subsets of data?"
-- "How can I operate matrices?"
 objectives:
 - "Select individual values and subsections from data."
 keypoints:
 - "`M(row, column)` indices are used to select data points"
 - "`:` is used to take slices of data"
+- `find()` returns a vector of indices
+- Create logical arrays by using logical operators as in `M>5`
 ---
 
 We have talked about how Matlab stores all data in matrices. Let's learn how to subset data in matrices, and to operate with matrices. 
@@ -271,8 +272,6 @@ logic_smallerthanfive =
    1   0   0   1
 ~~~
 {: .output}
-
-# Matrix operations
 
 
 NOTE: explanations and figures of this lesson have been taken from the [Matrix Indexing in Matlab article](https://www.mathworks.com/company/newsletters/articles/matrix-indexing-in-matlab.html)
