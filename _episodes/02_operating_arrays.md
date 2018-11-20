@@ -9,8 +9,6 @@ objectives:
 keypoints:
 - "`M(row, column)` indices are used to select data points"
 - "`:` is used to take slices of data"
-- `find()` returns a vector of indices
-- Create logical arrays by using logical operators as in `M>5`
 ---
 
 We have talked about how Matlab stores all data in matrices. Let's learn how to subset data in matrices, and to operate with matrices. 
