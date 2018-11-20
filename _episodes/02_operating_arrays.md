@@ -115,11 +115,22 @@ ans =
 ~~~
 {: .output}
 
+If we go back to our inflammation data we can select the inflammation of the first patient over the 40 days of treatment by selecting
+
+~~~
+>> first_patient = patient_data(1,:);
+~~~
+{: .language-matlab}
+
+And we can select the inflammation of all patients on day 19 by doing
+~~~
+>> inflammation_day_19 = patient_data(:,19);
+~~~
+{: .language-matlab}
 
 ## Linear indexing
 
 We can also refer to the items in a matrix by using only one index. In this case Matlab is treating the array as if the elements in the Matrix were strung out in a long column vector, by going down the columns consecutively, as in:
-
 
 ~~~
 16
@@ -164,7 +175,102 @@ ans =
 ~~~
 {: .output}
 
+A useful function that uses linear indexing is the function `find`. If we want to find the elements of the array that are larger than, say, 10, we will do
+
+~~~
+>> idx_largerthanten = find(M>10)
+~~~
+{: .language-matlab}
+
+~~~
+idx_largerthanten =
+
+     1
+     6
+     8
+    12
+    13
+    15
+~~~
+{: .output}
+
+largerthanten is storing the linear indices of M that correspond to values larger than 10. And to see which values are these,
+
+~~~
+>> M(idx_largerthanten)
+~~~
+{: .language-matlab}
+
+~~~
+ans =
+
+    16
+    11
+    14
+    15
+    13
+    12
+~~~
+{: .output}
+
 ## Logical indexing
+
+Logical indexing is done by having an array of the same size as the array we are considering, that is a logical array. This means that the array has only zeroes and ones. For example, many Matlab functions that start with *is* return logical arrays. 
+
+For example, if we wanted to find the prime values in array M we would use the `prime` function.
+
+~~~
+>> primeM = isprime(M)
+~~~
+{: .language-matlab}
+
+~~~
+primeM =
+
+  4×4 logical array
+
+   0   1   1   1
+   1   1   0   0
+   0   1   0   0
+   0   0   0   0
+~~~
+{: .output}
+
+And we can operate using this arrays. We can, for example, substitute all the prime numbers with the number 2.
+
+~~~
+>> M(primeM) = 2
+~~~
+{: .language-matlab}
+
+~~~
+M =
+
+    16     2     2     2
+     2     2    10     8
+     9     2     6    12
+     4    14    15     1
+~~~
+{: .output}
+
+Logical arrays can be created using logical operators. When the condition is true, a 1 will appear. Whe the condition is not true, the corresponding element of the array will be a zero. For example, to select the elements smaller than five:
+
+~~~
+>> logic_smallerthanfive = M<5
+~~~
+{: .language-matlab}
+
+~~~
+logic_smallerthanfive =
+
+  4×4 logical array
+
+   0   1   1   1
+   1   1   0   0
+   0   1   0   0
+   1   0   0   1
+~~~
+{: .output}
 
 # Matrix operations
 
