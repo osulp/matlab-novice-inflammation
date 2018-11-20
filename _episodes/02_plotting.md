@@ -92,8 +92,8 @@ mean   Average or mean value.
 {: .output}
 
 
-
-Let's take a look at the average inflammation over time:
+If we want an average inflammation over time we will want the mean over dimension 1. 
+The default for MATLAB is average over columns, so we could also skip the dimension in this case.
 
 ~~~
 >> plot(mean(patient_data, 1))
