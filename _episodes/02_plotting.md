@@ -42,7 +42,7 @@ so that other people can understand what it shows
 (including us if we return to this plot 6 months from now).
 
 Now let's look at other properties of the data. Let's calculate the average. 
-Averages are calculated in MATLAB with the mean function. To get details about what a function, like `mean`,
+Averages are calculated in MATLAB with the `mean` function. To get details about what a function, like `mean`,
 does and how to use it, we can search the documentation, or use MATLAB's `help` command.
 
 ~~~
@@ -91,209 +91,16 @@ mean   Average or mean value.
 ~~~
 {: .output}
 
-
-If we want an average inflammation over time we will want the mean over dimension 1. 
-The default for MATLAB is average over columns, so we could also skip the dimension in this case.
-
-~~~
->> plot(mean(patient_data, 1))
->> title('Daily average inflammation')
->> xlabel('Day of trial')
->> ylabel('Inflammation')
-~~~
-{: .language-matlab}
-
-![Average inflammation]({{ page.root }}/fig/average-inflammation.png)
-
-Here, we have calculated the average per day across all patients then used the `plot` function to display
-a line graph of those values.
-The result is roughly a linear rise and fall,
-which is suspicious:
-based on other studies, we expect a sharper rise and slower fall.
-<!---
-Let's have a look at two other statistics: the maximum and minimum
-inflammation per day across all patients.
-
-~~~
->> plot(max(patient_data, [], 1))
->> title('Maximum inflammation per day')
->> title('Daily average inflammation')
->> ylabel('Inflammation')
->> xlabel('Day of trial')
-~~~
-{: .language-matlab}
-
-![Maximum inflammation]({{ page.root }}/fig/max-inflammation.png)
-
-~~~
->> plot(min(patient_data, [], 1))
->> title('Minimum inflammation per day')
->> ylabel('Inflammation')
->> xlabel('Day of trial')
-~~~
-{: .language-matlab}
--->
-
-![Minumum inflammation]({{ page.root }}/fig/min-inflammation.png)
-
-Like `mean()`, the functions
-`max()` and `min()` can also operate across a specified dimension of
-the matrix. However, the syntax is slightly different. To see why,
-run a `help` on each of these functions.
-
-From the figures, we see that the maximum value rises and falls perfectly
-smoothly, while the minimum seems to be a step function. Neither result
-seems particularly likely, so either there's a mistake in our
-calculations or something is wrong with our data.
-
-> ## Plots
->
-> When we plot just one variable using the `plot` command e.g. `plot(Y)` 
-> what do the x-values represent?
->
-> > ## Solution
-> > The x-values are the indices of the y-data, so the first y-value is plotted
-> > against index 1, the second y-value against 2 etc.
-> {: .solution}
->
-> Why are the vertical lines in our plot of the minimum inflammation per day 
-> not perfectly vertical?
->
-> > ## Solution
-> > MATLAB interpolates between the points on a 2D line plot.
-> {: .solution}
->
-> Create a plot showing the standard deviation of the inflammation data for each day across all patients.
-> Hint: search the documentation for *standard deviation*
->
-> > ## Solution
-> > ```
-> > >> plot(std(patient_data, 0, 2))
-> > >> xlabel('Day of trial')
-> > >> ylabel('Inflammation')
-> > >> title('Standard deviation across all patients')
-> > ```
-> > {: .language-matlab}
-> {: .solution}
-{: .challenge}
-
-It is often convenient to combine multiple plots into one figure 
-using the `subplot`command which plots our graphs in a grid pattern.
-The first two parameters describe the grid we want to use, while the third
-parameter indicates the placement on the grid.
-
-~~~
->> subplot(1, 2, 1)
->> plot(max(patient_data, [], 1))
->> ylabel('max')
->> xlabel('day')
-
->> subplot(1, 2, 2)
->> plot(min(patient_data, [], 1))
->> ylabel('min')
->> xlabel('day')
-~~~
-{: .language-matlab}
-
-![Max Min subplot]({{ page.root }}/fig/max-min-subplot.png)
-
-Our work so far has convinced us that something is wrong with our
-first data file. We would like to check the other 11 the same way,
-but typing in the same commands repeatedly is tedious and error-prone.
-Since computers don't get bored (that we know of), we should create a
-way to do a complete analysis with a single command, and then figure out
-how to repeat that step once for each file. These operations are the
-subjects of the next two lessons.
-
-
-
-## Analyzing patient data
-Now that we know how to access data we want to compute with,
-we're ready to analyze `patient_data`.
-MATLAB knows how to perform common mathematical operations on arrays.
-If we want to find the average inflammation for all patients on all days,
-we can just ask for the mean of the array:
-
-~~~
->> mean(patient_data(:))
-~~~
-{: .language-matlab}
-
-~~~
-ans = 6.1487
-~~~
-{: .output}
-
-We couldn't just do `mean(patient_data)` because, that
-would compute the mean of *each column* in our table, and return an array
-of mean values. The expression `patient_data(:)` *flattens* the table into a
-one-dimensional array.
-
-
-We can also compute other statistics, like the maximum, minimum and
-standard deviation.
-
-~~~
->> disp('Maximum inflammation:)
->> disp(max(patient_data(:))
->> disp('Minimum inflammation:')
->> disp(min(patient_data(:))
->> disp('Standard deviation:')
->> disp(std(patient_data(:)))
-~~~
-{: .language-matlab}
-
-~~~
-Maximum inflammation:
-20
-Minimum inflammation:
-0
-Standard deviation:
-4.6148
-~~~
-{: .output}
-
-When analyzing data though, we often want to look at partial statistics,
-such as the maximum value per patient or the average value per day.
-One way to do this is to assign the data we want to a new temporary
-array, then ask it to do the calculation:
-
-~~~
->> patient_1 = patient_data(1, :)
->> disp('Maximum inflation for patient 1:')
->> disp(max(patient_1))
-~~~
-{: .language-matlab}
-
-~~~
-Maximum inflation for patient 1:
-18
-~~~
-{: .output}
-
-We don't actually need to store the row in a variable of its own.
-Instead, we can combine the selection and the function call:
-
-~~~
->> max(patient_data(1, :))
-~~~
-{: .language-matlab}
-
-~~~
-ans = 18
-~~~
-{: .output}
-
-What if we need the maximum inflammation for *all* patients, or the
+First we need to decide what we want. Do we need the maximum inflammation for *all* patients, or the
 average for each day?
-As the diagram below shows, we want to perform the operation across an
-axis:
+
+To support this, MATLAB allows us to specify the *dimension* we
+want to work on. If we want an average inflammation over time, this means that we will want MATLAB to calculate the average of each column. In MATLAB DIM=1 means that the operation is performed for each column, while DIM=2 means that the operation is performed for each row.
 
 ![Operations Across Axes](../fig/matlab-operations-across-axes.svg)
 
-To support this, MATLAB allows us to specify the *dimension* we
-want to work on. If we ask for the average across the dimension 1,
-we get:
+
+As we can see when we read the help information for `mean`, the default for the `mean` function is average over columns, so we can skip the dimension argument in this case. We can also indicate a dimension argument equal to 1: 
 
 ~~~
 >> mean(patient_data, 1)
@@ -404,3 +211,57 @@ ans =
 which is the average inflammation per patient across
 all days.
 
+
+Let's work on plotting this information, now.
+
+~~~
+>> patient_mean = mean(patient_data,1));
+>> plot(patient_mean)
+>> title('Daily average inflammation')
+>> xlabel('Day of trial')
+>> ylabel('Inflammation')
+~~~
+{: .language-matlab}
+
+
+
+
+> ## Plots
+>
+> When we plot just one variable using the `plot` command e.g. `plot(Y)` 
+> what do the x-values represent?
+>
+> > ## Solution
+> > The x-values are the indices of the y-data, so the first y-value is plotted
+> > against index 1, the second y-value against 2 etc.
+> {: .solution}
+>
+> Why are the vertical lines in our plot of the minimum inflammation per day 
+> not perfectly vertical?
+>
+> > ## Solution
+> > MATLAB interpolates between the points on a 2D line plot.
+> {: .solution}
+>
+> Create a plot showing the standard deviation of the inflammation data for each day across all patients.
+> Hint: search the documentation for *standard deviation*
+>
+> > ## Solution
+> > ```
+> > >> plot(std(patient_data, 0, 2))
+> > >> xlabel('Day of trial')
+> > >> ylabel('Inflammation')
+> > >> title('Standard deviation across all patients')
+> > ```
+> > {: .language-matlab}
+> {: .solution}
+{: .challenge}
+
+
+Our work so far has convinced us that something is wrong with our
+first data file. We would like to check the other 11 the same way,
+but typing in the same commands repeatedly is tedious and error-prone.
+Since computers don't get bored (that we know of), we should create a
+way to do a complete analysis with a single command, and then figure out
+how to repeat that step once for each file. These operations are the
+subjects of the next two lessons.
