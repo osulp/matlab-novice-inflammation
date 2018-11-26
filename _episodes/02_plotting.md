@@ -224,7 +224,7 @@ Let's work on plotting this information, now.
 {: .language-matlab}
 
 
-
+![Average inflammation]({{ page.root }}/fig/average-inflammation.png)
 
 > ## Plots
 >
