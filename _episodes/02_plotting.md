@@ -244,10 +244,13 @@ Let's work on plotting this information, now.
 > Can you plot patient_mean vs the new time vector? Hint: check `help plot`
 >
 > > ## Solution
-> > plot(xvector,patient_mean)
-> > title('Daily average inflammation')
-> > xlabel('Day of trial')
-> > ylabel('Inflammation')
+> > ```
+> > >> plot(xvector,patient_mean)
+> > >> title('Daily average inflammation')
+> > >> xlabel('Day of trial')
+> > >> ylabel('Inflammation')
+> > ```
+> > {: .language-matlab}
 > {: .solution}
 >
 > Create a plot showing the standard deviation of the inflammation data for each day across all patients.
