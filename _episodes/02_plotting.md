@@ -250,13 +250,6 @@ Let's work on plotting this information, now.
 > > ylabel('Inflammation')
 > {: .solution}
 >
-> Why are the vertical lines in our plot of the minimum inflammation per day 
-> not perfectly vertical?
->
-> > ## Solution
-> > MATLAB interpolates between the points on a 2D line plot.
-> {: .solution}
->
 > Create a plot showing the standard deviation of the inflammation data for each day across all patients.
 > Hint: search the documentation for *standard deviation*
 >
