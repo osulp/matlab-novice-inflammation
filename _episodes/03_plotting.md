@@ -327,7 +327,22 @@ The line specifiers can be positioned in any order. To learn more about all the 
 {: .challenge}
 
 
-Until now we have seen that every time that we use the plot function our figure resets. 
+Until now we have seen that every time that we use the plot function our figure resets. However, we may want to show several sets of plots in the same axis. For example, we could be interested in comparing the inflammation of a couple of individual patients with the mean. 
+
+~~~
+>> plot(patient_data(23,:),'bo')
+>> hold on
+>> plot(patient_data(41,:),'ko')
+>> plot(patient_mean,'r')
+>> hold off
+>> title('Daily average inflammation')
+>> xlabel('Day of trial')
+>> ylabel('Inflammation')
+~~~
+{: .language-matlab}
+
+![Comparison of patient data and mean](../fig/patientvsmean-inflammation-01.png)
+
 
 Our work so far has convinced us that something is wrong with our
 first data file. We would like to check the other 11 the same way,
