@@ -268,6 +268,18 @@ Let's work on plotting this information, now.
 {: .challenge}
 
 
+As you can see, MATLAB uses a line plot as default. Sometimes a line plot is not the best way of visualizing your data. 
+
+~~~
+>> plot(patient_mean,'*')
+>> title('Daily average inflammation')
+>> xlabel('Day of trial')
+>> ylabel('Inflammation')
+~~~
+{: .language-matlab}
+
+To use dots to create a scatter plot 
+
 Our work so far has convinced us that something is wrong with our
 first data file. We would like to check the other 11 the same way,
 but typing in the same commands repeatedly is tedious and error-prone.
