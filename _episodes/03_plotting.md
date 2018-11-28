@@ -354,8 +354,7 @@ In this case we have plotted the inflammation values of patient number 23 as blu
 
 ![Comparison of patient data and mean with legend](../fig/patientvsmean-inflammation-02.png)
 
-Our work so far has convinced us that something is wrong with our
-first data file. We would like to check the other 11 the same way,
+One of the things we discovered when playing with the data is that the average of the inflammation is roughly a linear rise and fall, which is suspicious: based on other studies, we expect a sharper rise and slower fall. We suspect that something is wrong with our first data file. We would like to check the other 11 the same way,
 but typing in the same commands repeatedly is tedious and error-prone.
 Since computers don't get bored (that we know of), we should create a
 way to do a complete analysis with a single command, and then figure out
