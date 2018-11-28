@@ -343,6 +343,14 @@ Until now we have seen that every time that we use the plot function our figure 
 
 ![Comparison of patient data and mean](../fig/patientvsmean-inflammation-01.png)
 
+In this case we have plotted the inflammation values of patient number 23 as blue circles, and the inflammation values of patient 41 as black circles. The average is a solid red line. In order to understand the graph we need to add a legend. 
+
+~~~
+>> legend('Patient 23','Patient 41', 'Mean')
+~~~
+{: .language-matlab}
+
+![Comparison of patient data and mean with legend](../fig/patientvsmean-inflammation-02.png)
 
 Our work so far has convinced us that something is wrong with our
 first data file. We would like to check the other 11 the same way,
