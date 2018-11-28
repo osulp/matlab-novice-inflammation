@@ -563,7 +563,7 @@ The figures output to the `results` directory are as shown below:
 
 <img src="../fig/inflammation-03.png" style="width:500px; height:400px">
 
-Sure enough, the pattern of the average is the same as before. 
+Sure enough, the pattern of the average is the same in all files. 
 
 We've now automated the analysis and have confirmed that all the data
 files we have looked at show the same artifact. This is what we set out to test, and now
