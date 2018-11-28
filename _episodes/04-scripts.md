@@ -124,39 +124,6 @@ help analyze
 ```
 {: .language-matlab}
 
-Let's modify our `analyze` script so that it creates and saves sub-plots,
-rather than individual plots.
-As before we'll save the images in the `results` directory.
-
-~~~
-%ANALYZE   Save plots of inflammation statistics to disk.
-
-patient_data = csvread('data/inflammation-01.csv');
-
-% Plot inflammation stats for first patient
-subplot(1, 3, 1)
-plot(mean(patient_data, 1))
-title('Average')
-ylabel('Inflammation')
-xlabel('Day')
-
-subplot(1, 3, 2)
-plot(max(patient_data, [], 1))
-title('Max')
-ylabel('Inflammation')
-xlabel('Day')
-
-subplot(1, 3, 3)
-plot(min(patient_data, [], 1))
-title('Min')
-ylabel('Inflammation')
-xlabel('Day')
-
-% Save plot in 'results' directory as png image.
-print('results/patient_data-01','-dpng')
-~~~
-{: .language-matlab}
-
 When saving plots to disk,
 it's sometimes useful to turn off their visibility as MATLAB plots them.
 For example, we might not want to view (or spend time closing) the figures in MATLAB, and
@@ -175,23 +142,10 @@ ave_inflammation = mean(patient_data, 1);
 % Plot inflammation stats for first patient
 figure('visible', 'off')
 
-subplot(1, 3, 1)
 plot(mean(patient_data, 1))
-title('Average')
-ylabel('inflammation')
-xlabel('Day')
-
-subplot(1, 3, 2)
-plot(max(patient_data, [], 1))
-title('Max')
+title('Daily average inflammation')
+xlabel('Day of trial')
 ylabel('Inflammation')
-xlabel('Day')
-
-subplot(1, 3, 3)
-plot(min(patient_data, [], 1))
-title('Min')
-ylabel('Inflammation')
-xlabel('Day')
 
 % Save plot in 'results' directory as png image.
 print('results/patient_data-01','-dpng')
