@@ -278,7 +278,7 @@ As you can see, MATLAB uses a line plot as default. Sometimes a line plot is not
 ~~~
 {: .language-matlab}
 
-![Scatter plot of average inflammation](../fig/scatter_plot_inflammation.png)
+![Scatter plot of average inflammation](../fig/scatterplot-inflammation-01.png)
 
 In this figure the data is shown as stars. This is because we included the line specifier `'*'`. We can specify the line color, the marker style, and the line style. For example, if we wanted to plot a dashed line (`'--'`) with circles as markers (`'o'`) in red (`'r'`) we would write:
 
@@ -290,7 +290,10 @@ In this figure the data is shown as stars. This is because we included the line 
 ~~~
 {: .language-matlab}
 
+![Scatter plot of average inflammation in red](../fig/scatterplot-inflammation-02.png)
+
 The line specifiers can be positioned in any order. To learn more about all the options available, you can search for LineSpec in the Matlab help. 
+
 
 Our work so far has convinced us that something is wrong with our
 first data file. We would like to check the other 11 the same way,
