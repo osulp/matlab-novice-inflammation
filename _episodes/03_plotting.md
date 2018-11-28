@@ -278,6 +278,8 @@ As you can see, MATLAB uses a line plot as default. Sometimes a line plot is not
 ~~~
 {: .language-matlab}
 
+![Scatter plot of average inflammation](../fig/scatter_plot_inflammation.png)
+
 To use dots to create a scatter plot 
 
 Our work so far has convinced us that something is wrong with our
