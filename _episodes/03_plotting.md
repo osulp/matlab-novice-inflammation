@@ -294,6 +294,40 @@ In this figure the data is shown as stars. This is because we included the line 
 
 The line specifiers can be positioned in any order. To learn more about all the options available, you can search for LineSpec in the Matlab help. 
 
+> ## Plots
+>
+> Can you create a plot of the patient average where the markers are diamonds, the line is dotted, and the color magenta?
+>
+> > ## Solution
+> > ```
+> > >> plot(patient_mean,'dm:')
+> > >> title('Daily average inflammation')
+> > >> xlabel('Day of trial')
+> > >> ylabel('Inflammation')
+> > ```
+> > {: .language-matlab}
+> {: .solution}
+>
+> We want to customize even more the look of our plot. We want our markers to be larger than the default, of size 12, and our 
+> solid black line to be thick, 3pt thick. We would also want our markers (upward-pointing triangles) to have a filling color (red) different than the edge (black). Hint: take a look at the LineSpec instructions in the Matlab help, and read the Related Properties section. 
+>
+> > ## Solution
+> > ```
+> > >> plot(patient_mean,'-k^',...
+    'LineWidth',3,...
+    'MarkerEdgeColor','k',...
+    'MarkerFaceColor','r',...
+    'MarkerSize',12)
+> > >> title('Daily average inflammation')
+> > >> xlabel('Day of trial')
+> > >> ylabel('Inflammation')
+> > ```
+> > {: .language-matlab}
+> {: .solution}
+{: .challenge}
+
+
+Until now we have seen that every time that we use the plot function our figure resets. 
 
 Our work so far has convinced us that something is wrong with our
 first data file. We would like to check the other 11 the same way,
