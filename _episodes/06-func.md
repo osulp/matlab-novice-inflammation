@@ -283,133 +283,7 @@ or the next person who reads it won't be able to understand what's going on.
 > {: .solution}
 {: .challenge}
 
-Once we start putting things in functions so that we can
-re-use them, we need to start testing that those functions are
-working correctly.
-To see how to do this, let's write a function to center a
-dataset around a particular value:
 
-~~~
-function out = center(data, desired)
-    out = (data - mean(data(:))) + desired;
-end
-~~~
-{: .language-matlab}
-
-We could test this on our actual data, but since we
-don't know what the values ought to be,
-it will be hard to tell if the result was correct,
-Instead, let's create a matrix of 0's, and then center that
-around 3:
-
-~~~
->> z = zeros(2,2);
->> center(z, 3)
-~~~
-{: .language-matlab}
-
-~~~
-ans =
-
-   3   3
-   3   3
-~~~
-{: .output}
-
-That looks right, so let's try out `center` function on our real data:
-
-~~~
->> data = csvread('data/inflammation-01.csv');
->> centered = center(data(:), 0)
-~~~
-{: .language-matlab}
-
-It's hard to tell from the default output whether the
-result is correct--this is often the case when working with
-fairly large arrays--but, there are a few simple tests that
-will reassure us.
-
-Let's calculate some simple statistics:
-
-~~~
->> disp([min(data(:)), mean(data(:)), max(data(:))])
-~~~
-{: .language-matlab}
-
-~~~
-0.00000    6.14875   20.00000
-~~~
-{: .output}
-
-And let's do the same after applying our `center` function
-to the data:
-
-~~~
->> disp([min(centered(:)), mean(centered(:)), max(centered(:))])
-~~~
-{: .language-matlab}
-
-~~~
-   -6.1487   -0.0000   13.8513
-~~~
-{: .output}
-
-That seems almost right: the original mean
-was about 6.1, so the lower bound from zero is now about -6.1.
-The mean of the centered data isn't quite zero--we'll explore
-why not in the challenges--but it's pretty close. We can even
-go further and check that the standard
-deviation hasn't changed:
-
-~~~
->> std(data(:)) - std(centered(:))
-~~~
-{: .language-matlab}
-
-~~~
-5.3291e-15
-~~~
-{: .output}
-
-The difference is very small. It's still possible that our function
-is wrong, but it seems unlikely enough that we should probably
-get back to doing our analysis. We have one more task first, though:
-we should write some [documentation]({{ page.root }}/reference.html#documentation)
-for our function to remind ourselves later what it's for and
-how to use it.
-
-~~~
-function out = center(data, desired)
-    %CENTER   Center data around a desired value.
-    %
-    %       center(DATA, DESIRED)
-    %
-    %   Returns a new array containing the values in
-    %   DATA centered around the value.
-
-    out = (data  - mean(data(:))) + desired;
-end
-~~~
-{: .language-matlab}
-
-Comment lines immediately below the function definition line
-are called "help text". Typing `help function_name` brings
-up the help text for that function:
-
-~~~
->> help center
-~~~
-{: .language-matlab}
-
-~~~
-Center   Center data around a desired value.
-
-    center(DATA, DESIRED)
-
-Returns a new array containing the values in
-DATA centered around the value.
-~~~
-{: .output}
 
 > ## Testing a Function
 >
@@ -449,94 +323,68 @@ DATA centered around the value.
 > {: .solution}
 {: .challenge}
 
-> ## Convert a script into a function
->
-> Convert the script from the previous episode into a function called `analyze_dataset`.
-> The function should operate on a single data file,
-> and should have two parameters: `file_name` and `plot_switch`.
-> When called, the function should create the three graphs produced in the
-> previous lesson. Whether they are displayed or saved to the `results` directory
-> should be controlled by the value of `plot_switch`
-> i.e. `analyze_dataset('inflammation-01.csv', 0)`
-> should display the corresponding graphs for the first data set;
-> `analyze_dataset('inflammation-02.csv', 1)` should save the figures for the second
-> dataset to the `results` directory.
->
-> Be sure to give your function help text.
->
-> > ## Solution
-> > ```
-> > function analyze_dataset(file_name, plot_switch)
-> >     %ANALYZE_DATASET    Perform analysis for named data file.
-> >     %   Create figures to show average, max and min inflammation.
-> >     %   Display plots in GUI using plot_switch = 0,
-> >     %   or save to disk using plot_switch = 1.
-> >     %
-> >     %   Example:
-> >     %       analyze_dataset('data/inflammation-01.csv', 0)
-> >     
-> >     % Generate string for image name:
-> >     img_name = replace(file_name, 'inflammation', 'patient_data');
-> >     img_name = replace(img_name, '.csv', '.png');
-> >     img_name = fullfile('results', img_name);
-> >
-> >     patient_data = csvread(file_name);
-> >     
-> >     if plot_switch == 1
-> >     	figure('visible', 'off')
-> >     else
-> >     	figure('visible', 'on')
-> >     end
-> >     
-> >     subplot(2, 2, 1)
-> >     plot(mean(patient_data, 1))
-> >     ylabel('average')
-> >     
-> >     subplot(2, 2, 2)
-> >     plot(max(patient_data, [], 1))
-> >     ylabel('max')
-> >     
-> >     subplot(2, 2, 3)
-> >     plot(min(patient_data, [], 1))
-> >     ylabel('min')
-> >     
-> >     if plot_switch == 1
-> >         print('-dpng', img_name)
-> >         close()
-> >     end
-> >  end
-> >  ```
-> > {: .language-matlab}
-> {: .solution}
-{: .challenge}
+## Convert a script into a function
 
-> ## Automate the analysis for all files
->
-> Write a script called `process_all` which loops over all of the
-> data files, and calls the function `analyze_dataset` for each file
-> in turn.
-> Your script should save the image files to the 'results' directory
-> rather than displaying the figures in the MATLAB GUI.
->
-> > ## Solution
-> >
-> > ```
-> > %PROCESS_ALL    Analyse all inflammation datasets
-> > %   Create figures to show average, max and min inflammation.
-> > %   Save figures to 'results' directory.
-> >
-> > files = dir('data/inflammation-*.csv');
-> >
-> > for i = 1:length(files)
-> >     file_name = files(i).name;
-> >
-> >     % Process each data set, saving figures to disk.
-> >     analyze_dataset(file_name, 1);
-> > end
-> > ```
-> > {: .language-matlab}
-> {: .solution}
-{: .challenge}
+Convert the script from the previous episode into a function called `analyze_dataset`.
+The function should operate on a single data file,
+and should have one parameter: `file_name`.
+When called, the function should create the three graphs produced in the
+previous lesson. 
+i.e. `analyze_dataset('inflammation-01.csv')`
+should save the figures for the first dataset to the `results` directory.
+
+Be sure to give your function help text.
+
+~~~
+function analyze_dataset(file_name)
+    %ANALYZE_DATASET    Perform analysis for named data file.
+    %   Create figures to show average inflammation.
+    %
+    %   Example:
+    %       analyze_dataset('data/inflammation-01.csv')
+    
+    % Generate string for image name:
+    img_name = replace(file_name, 'inflammation', 'patient_data');
+    img_name = replace(img_name, '.csv', '.png');
+    img_name = fullfile('results', img_name);
+    patient_data = csvread(file_name);
+    
+   	figure('visible', 'off')
+    
+    plot(mean(patient_data, 1))
+    title('Daily average inflammation')
+    xlabel('Day of trial')
+    ylabel('Inflammation')
+    
+    print('-dpng', img_name)
+    
+    close()
+    
+end
+~~~
+{: .language-matlab}
+
+## Automate the analysis for all files
+Write a script called `process_all` which loops over all of the
+data files, and calls the function `analyze_dataset` for each file
+in turn.
+
+ ~~~
+ %PROCESS_ALL    Analyse all inflammation datasets
+ %   Create figures to show average inflammation.
+ %   Save figures to 'results' directory.
+
+ files = dir('data/inflammation-*.csv');
+
+ for i = 1:length(files)
+     file_name = files(i).name;
+
+     % Process each data set, saving figures to disk.
+     analyze_dataset(file_name);
+ end
+ ~~~
+ {: .language-matlab}
+
 
 
 We have now solved our original problem: we can analyze
