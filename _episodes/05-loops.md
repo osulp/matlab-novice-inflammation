@@ -563,9 +563,7 @@ The figures output to the `results` directory are as shown below:
 
 <img src="../fig/inflammation-03.png" style="width:500px; height:400px">
 
-Sure enough, the maxima of these data sets show exactly
-the same ramp as the first,
-and their minima show the same staircase structure.
+Sure enough, the pattern of the average is the same as before. 
 
 We've now automated the analysis and have confirmed that all the data
 files we have looked at show the same artifact. This is what we set out to test, and now
