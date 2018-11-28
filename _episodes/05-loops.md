@@ -537,23 +537,10 @@ for idx = 1:3
     % Create figures
     figure('visible', 'off')
 
-    subplot(2, 2, 1)
     plot(mean(patient_data, 1))
-    title('Average')
+    title('Daily average inflammation')
+    xlabel('Day of trial')
     ylabel('Inflammation')
-    xlabel('Day')
-
-    subplot(2, 2, 2)
-    plot(max(patient_data, [], 1))
-    title('Max')
-    ylabel('Inflammation')
-    xlabel('Day')
-
-    subplot(2, 2, 3)
-    plot(min(patient_data, [], 1))
-    title('Min')
-    ylabel('Inflammation')
-    xlabel('Day')
 
     print('-dpng', img_name)
     close()
