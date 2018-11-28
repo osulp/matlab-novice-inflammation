@@ -313,7 +313,7 @@ de
 {: .challenge}
 
 Currently, our script `analyze.m` reads in data, analyzes it,
-and saves plots of the results.
+and saves plots of the results. Let's work on the script rather than the function to make this simpler. 
 If we would rather display the plots interactively,
 we would have to remove (or *comment out*) the following code:
 
@@ -374,24 +374,11 @@ for idx = 1:3
     else
         figure('visible', 'on')
     end
-
-    subplot(2, 2, 1)
+    
     plot(mean(patient_data, 1))
-    title('Average')
+    title('Daily average inflammation')
+    xlabel('Day of trial')
     ylabel('Inflammation')
-    xlabel('Day')
-
-    subplot(2, 2, 2)
-    plot(max(patient_data, [], 1))
-    title('Max')
-    ylabel('Inflammation')
-    xlabel('Day')
-
-    subplot(2, 2, 3)
-    plot(min(patient_data, [], 1))
-    title('Min')
-    ylabel('Inflammation')
-    xlabel('Day')
 
     if plot_switch == 1
         print('-dpng', img_name)
@@ -401,3 +388,43 @@ for idx = 1:3
 end
 ~~~
 {: .language-matlab}
+
+If this makes sense, let's change the function ANALYZE_DATASET so that instead of one parameter it will have two parameters: `file_name` and `plot_switch`. When called, the function should create the three graphs produced in the
+previous lesson. Whether they are displayed or saved to the `results` directory should be controlled by the value of `plot_switch` i.e. `analyze_dataset('data/inflammation-01.csv', 0)` should display the corresponding graphs for the first data set; `analyze_dataset('data/inflammation-02.csv', 1)` should save the figures for the second dataset to the `results` directory.
+
+~~~
+  function analyze_dataset(file_name, plot_switch)
+      %ANALYZE_DATASET    Perform analysis for named data file.
+      %   Create figures to show average, max and min inflammation.
+      %   Display plots in GUI using plot_switch = 0,
+      %   or save to disk using plot_switch = 1.
+      %
+      %   Example:
+      %       analyze_dataset('data/inflammation-01.csv', 0)
+      
+      % Generate string for image name:
+      img_name = replace(file_name, '.csv', '.png');
+      img_name = replace(img_name, 'data', 'results');
+ 
+      patient_data = csvread(file_name);
+      
+      if plot_switch == 1
+      	figure('visible', 'off')
+      else
+      	figure('visible', 'on')
+      end
+      
+     
+      plot(mean(patient_data, 1))
+      ylabel('average')
+      title('Daily average inflammation')
+      xlabel('Day of trial')
+      ylabel('Inflammation')
+    
+      if plot_switch == 1
+          print('-dpng', img_name)
+          close()
+      end
+   end
+   ~~~
+  {: .language-matlab}
