@@ -9,6 +9,8 @@ objectives:
 - "Display simple graphs."
 keypoints:
 - "Use `plot` to visualize data."
+- "Use line specification values to costumixe the look of the line, the markers and the color of your plot."
+- "Use `hold on` to visualize more data into the same axes and `hold off` to stop."
 ---
 
 ## Plotting
