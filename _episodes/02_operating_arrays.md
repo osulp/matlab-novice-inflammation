@@ -25,7 +25,7 @@ There are three ways of accessing the elements of a matrix with Matlab.
 Let's create an example array using the "magic" function.
 
 ~~~
->> M = magic(8)
+>> M = magic(4)
 ~~~
 {: .language-matlab}
 
