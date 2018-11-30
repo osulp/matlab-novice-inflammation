@@ -93,7 +93,7 @@ mean   Average or mean value.
 ~~~
 {: .output}
 
-First we need to decide what we want. Do we need the maximum inflammation for *all* patients, or the
+First we need to decide what we want. Do we need the average inflammation for *all* patients, or the
 average for each day?
 
 To support this, MATLAB allows us to specify the *dimension* we
