@@ -102,7 +102,7 @@ want to work on. If we want an average inflammation over time, this means that w
 ![Operations Across Axes](../fig/matlab-operations-across-axes.svg)
 
 
-As we can see when we read the help information for `mean`, the default for the `mean` function is average over columns, so we can skip the dimension argument in this case. We can also indicate a dimension argument equal to 1: 
+It seems more interesting to calculate the average inflammation over all patients to see if there is a pattern. We want to calculate the average of each column. As we can see when we read the help information for `mean`, the default for the `mean` function is average over columns, so we can skip the dimension argument in this case. We can also indicate a dimension argument equal to 1: 
 
 ~~~
 >> mean(patient_data, 1)
