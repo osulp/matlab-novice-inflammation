@@ -217,7 +217,7 @@ all days.
 Let's work on plotting this information, now.
 
 ~~~
->> patient_mean = mean(patient_data,1));
+>> patient_mean = mean(patient_data,1);
 >> plot(patient_mean)
 >> title('Daily average inflammation')
 >> xlabel('Day of trial')
