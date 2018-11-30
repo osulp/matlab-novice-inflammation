@@ -345,6 +345,8 @@ Until now we have seen that every time that we use the plot function our figure 
 
 ![Comparison of patient data and mean](../fig/patientvsmean-inflammation-01.png)
 
+`hold on` retains plots in the current axes so that new plots added to the axes do not delete existing plots. To remove the hold state we typw `hold off`. After `hold off` a new `plot` command will reset the axes, deleting existing plots. 
+
 In this case we have plotted the inflammation values of patient number 23 as blue circles, and the inflammation values of patient 41 as black circles. The average is a solid red line. In order to understand the graph we need to add a legend. 
 
 ~~~
