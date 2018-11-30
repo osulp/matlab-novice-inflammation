@@ -193,7 +193,7 @@ idx_largerthanten =
 ~~~
 {: .output}
 
-largerthanten is storing the linear indices of M that correspond to values larger than 10. And to see which values are these,
+idx_largerthanten is storing the linear indices of M that correspond to values larger than 10. And to see which values are these,
 
 ~~~
 >> M(idx_largerthanten)
