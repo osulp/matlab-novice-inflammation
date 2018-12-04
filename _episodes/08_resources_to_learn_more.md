@@ -6,13 +6,17 @@ questions:
 - "How can I continue learning?"
 objectives:
 - "List resources useful to continue learning"
-- "General advice about improving Matlab skills"
 keypoints:
 - "The more you use it the more you will learn"
 - "Matlab help is a great tool"
 - "Build your community"
 ---
 
+## Build your community
+
+The best way of succeeding in making a tool like MATLAB useful for your research is to start using it, and to have a community that you can rely on. Find out who uses MATLAB around you, talk to them about what they find it useful for, ask them how they learned, and ask them questions when you have them. 
+
+To learn in general about best practices for scientiffic computing check this article: [Wilson G, Aruliah DA, Brown CT, Chue Hong NP, Davis M, Guy RT, et al. (2014) Best Practices for Scientific Computing. PLoS Biol 12(1): e1001745. https://doi.org/10.1371/journal.pbio.1001745](https://doi.org/10.1371/journal.pbio.1001745)
 
 ## At OSU:
 
