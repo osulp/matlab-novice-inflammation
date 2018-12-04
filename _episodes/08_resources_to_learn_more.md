@@ -29,4 +29,4 @@ The course is open to students across campus who are of gradate standing (or wit
 
 ### Tutorials
 
-The math department has three tutorials that focus on number formatting and arrays, on matrices, plots, and models, and on MATLAB specific syntax (sin, cos, rand, pi, etc.). They can be accessed through the page [https://math.oregonstate.edu/mlc_matlabtutorial](https://math.oregonstate.edu/mlc_matlabtutorial)
+The Department of Mathematics at OSU has three tutorials that focus on number formatting and arrays, on matrices, plots, and models, and on MATLAB specific syntax (sin, cos, rand, pi, etc.). They can be accessed through the page [https://math.oregonstate.edu/mlc_matlabtutorial](https://math.oregonstate.edu/mlc_matlabtutorial)
