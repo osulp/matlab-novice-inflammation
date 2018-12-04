@@ -3,6 +3,8 @@ layout: page
 title: Setup
 ---
 
+This lesson can be found in [https://osulp.github.io/matlab-novice-inflammation/](https://osulp.github.io/matlab-novice-inflammation/)
+
 You will need to install MATLAB or [GNU Octave][gnu-octave] to do this lesson.
 
 You will also need to download some data, which we will analyze using MATLAB:
