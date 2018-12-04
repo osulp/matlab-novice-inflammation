@@ -13,6 +13,7 @@ keypoints:
 - "Build your community"
 ---
 
+
 ## At OSU:
 
 ### Classes
@@ -30,3 +31,13 @@ The course is open to students across campus who are of gradate standing (or wit
 ### Tutorials
 
 The Department of Mathematics at OSU has three tutorials that focus on number formatting and arrays, on matrices, plots, and models, and on MATLAB specific syntax (sin, cos, rand, pi, etc.). They can be accessed through the page [https://math.oregonstate.edu/mlc_matlabtutorial](https://math.oregonstate.edu/mlc_matlabtutorial)
+
+## Resources by Mathworks
+
+The MATLAB help is very complete. Type `help functionname` if you want to learn about how to use a particular function named functionname, or search in the [MATLAB documentation](https://www.mathworks.com/help/matlab/). 
+
+[Support page from Mathworks](https://www.mathworks.com/support.html?s_tid=gn_supp)
+
+[Getting started with MATLAB](https://www.mathworks.com/examples/matlab/category/getting-started-with-matlab)
+
+[Matlab courses](https://matlabacademy.mathworks.com/)
