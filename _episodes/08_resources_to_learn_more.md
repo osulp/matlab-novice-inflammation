@@ -32,6 +32,10 @@ To learn in general about best practices for scientiffic computing check this ar
 
 The course is open to students across campus who are of gradate standing (or with permission).  Familiarity with basic calculus, ordinary differential equations,  and linear algebra will be expected. 
 
+### Matlab help desk
+
+Find information about how to get individualized help for your Matlab challenges here: [https://it.engineering.oregonstate.edu/dearborn-119](https://it.engineering.oregonstate.edu/dearborn-119)
+
 ### Tutorials
 
 The Department of Mathematics at OSU has three tutorials that focus on number formatting and arrays, on matrices, plots, and models, and on MATLAB specific syntax (sin, cos, rand, pi, etc.). They can be accessed through the page [https://math.oregonstate.edu/mlc_matlabtutorial](https://math.oregonstate.edu/mlc_matlabtutorial)
