@@ -3,8 +3,6 @@ layout: page
 title: Setup
 ---
 
-WE ARE IN THE PROCESS OF UPDATING THESE INSTRUCTIONS. COME BACK SOON!
-
 This lesson can be found in [https://osulp.github.io/matlab-novice-inflammation/](https://osulp.github.io/matlab-novice-inflammation/)
 
 You will need access to MATLAB to follow this lesson. MATLAB is a MathWorks product that must be purchased. If you are an OSU faculty, staff or student, you have several options to install Matlab that we outline below. If you are not part of OSU MATLAB offers [30 day trials](https://www.mathworks.com/products/get-matlab.html). You can also follow this lesson using [GNU Octave][gnu-octave].
