@@ -30,7 +30,7 @@ You will also need to download some data, which we will analyze using MATLAB:
 
 * You will need to use Citrix. You have two options
 	1. Install the Citrix receiver client in your computer following the instructions [here](https://it.engineering.oregonstate.edu/citrix). 
-	2. Use Citrix in a browser by going to https://apps.oregonstate.edu and logging in with your e-mail and password. *This is a better option if you are doing this at the beginning of the class, it is faster*
+	2. Use Citrix in a browser by going to [https://apps.oregonstate.edu](https://apps.oregonstate.edu) and logging in with your e-mail and password. *This is a better option if you are doing this at the beginning of the class, it is faster*
 		* If using **Firefox**: When prompted, activate the citrix plugin.
 		* **IE** If you already have the citrix Workspace client, skip the install step and continue to the browser version of Citrix.
 		* **Safari** When prompted, select "Trust" to unblock the Citrix Workspace plug-in.
@@ -43,7 +43,7 @@ When you use MATLAB via Citrix MATLAB will only see the folders in your ONID Dri
 
 #### **Via Citrix**
 
-1. Open the Chrome app on Citrix Apps here: http://apps.oregonstate.edu 
+1. Open the Chrome app on Citrix Apps here: [http://apps.oregonstate.edu](http://apps.oregonstate.edu) 
 2. Navigate to this lesson and download [matlab-novice-inflammation.zip]({{ page.root}}/data/matlab-novice-inflammation.zip). The file will appear at the bottom of the page. Click on the arrow and choose "Show in folder". (the file will be downloaded in Network/onid-fs.onid.oregonstate.edu/youronidusername/Profile/Downloads/)
 3. On the explorer folder right click on the file matlab-novice-inflammation. You will get a Windows Security message. Click OK. Chose Copy.
 4. Through the navigation panel on the left navigate to This PC -> ONID Home (Z:). Create a folder called *matlab-novice-inflammation*. Inside the folder right click and choose Paste. 
@@ -80,7 +80,7 @@ Alternative instructions in [this OSU article](https://oregonstate.teamdynamix.c
 
 #### **Off-campus**
 
-To connect via VPN follow instruction in https://oregonstate.teamdynamix.com/TDClient/1935/Portal/KB/ArticleDet?ID=76790 and follow instructions above. 
+To connect via VPN follow instruction in [this OSU article](https://oregonstate.teamdynamix.com/TDClient/1935/Portal/KB/ArticleDet?ID=76790) and follow instructions above. 
 
 For instructions on accessing ONID Drive from a Windows or a Mac off campus check the articles in [this OSU page](https://oregonstate.teamdynamix.com/TDClient/KB/ArticleDet?ID=45671). 
 
