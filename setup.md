@@ -42,28 +42,47 @@ When you use MATLAB via Citrix MATLAB will only see the folders in your ONID Dri
 #### Via Citrix
 
 * Open the Chrome app on Citrix Apps here: http://apps.oregonstate.edu 
-* Navigate to this lesson and download [matlab-novice-inflammation.zip]({{ page.root}}/data/matlab-novice-inflammation.zip). The file will appear at the bottom of the page. Click on the arrow and choose "Show in folder". (the file will be downloaded in Network/onid-fs.onid.oregonstate.edu/youronidname/Profile/Downloads/)
+* Navigate to this lesson and download [matlab-novice-inflammation.zip]({{ page.root}}/data/matlab-novice-inflammation.zip). The file will appear at the bottom of the page. Click on the arrow and choose "Show in folder". (the file will be downloaded in Network/onid-fs.onid.oregonstate.edu/youronidusername/Profile/Downloads/)
 * On the explorer folder right click on the file matlab-novice-inflammation. You will get a Windows Security message. Click OK. Chose Copy.
 * Through the navigation panel on the left navigate to This PC -> ONID Home (Z:). Create a folder called *matlab-novice-inflammation*. Inside the folder right click and choose Paste. 
 
-#### Windows On-Campus 
-Find instructions in [this OSU article](https://oregonstate.teamdynamix.com/TDClient/KB/ArticleDet?ID=45710)
+#### Windows On-Campus (or from home connected via VCN)
+
+1. From the windows search bar type "\\onid-fs.onid.oregonstate.edu"
+2. Type in your ONID user name "onid\Username" and password
+3. You will see two folders: public_html and a folder with your onid user name. Save files in your user folder. This directory will show up as the Z drive from applications running from apps.oregonstate.edu
+
+Once you can see the ONID Drive from your computer, download the data:
+
+1. Make a new folder on your ONID Drive called *matlab-novice-inflammation*.
+2. Download [matlab-novice-inflammation.zip]({{ page.root}}/data/matlab-novice-inflammation.zip) and move the file to this folder.
+3. Extract the zip archive by right-clicking and selecting Extract all. Note that on Windows, double-clicking on the zip file simply previews the contents. This will place all the data in the `matlab-novice-inflammation` directory.
+
+Alternative instructions in [this OSU article](https://oregonstate.teamdynamix.com/TDClient/KB/ArticleDet?ID=45710)
 
 #### Mac On-Campus 
-Find instructions in [this OSU article](https://oregonstate.teamdynamix.com/TDClient/KB/ArticleDet?ID=45703)
 
-For instructions on accessing ONID Drive from a Windows or a Mac off campus check the articles in [this OSU page](https://oregonstate.teamdynamix.com/TDClient/KB/ArticleDet?ID=45671). 
+1. Open finder. On the top menu chose Go, and then Connect to server.
+2. Add smb://onid-fs.onid.oregonstate.edu to the server to connect, and press Connect.
+3. Enter your ONID information. Name "onid\username" and password
+4. Choose the right volume to connect to. It should be the one named as your ONID username. 
+5. The drive should appear in your finder window as onid-fs.onid.oregonstate.edu
 
 Once you can see the ONID Drive from your computer, download the data:
 
 1. Make a new folder on your ONID Drive called *matlab-novice-inflammation*.
 2. Download [matlab-novice-inflammation.zip]({{ page.root}}/data/matlab-novice-inflammation.zip) and move the file to this folder.
 3. Extract the zip archive. This will place all the data in the `matlab-novice-inflammation` directory.
-   Note that on Windows, double-clicking on the zip file simply previews the contents: to extract, right-click and select **Extract All**
 
-## If you use a classroom computer using the Mac option
+Alternative instructions in [this OSU article](https://oregonstate.teamdynamix.com/TDClient/KB/ArticleDet?ID=45703)
 
-## If you use a classroom computer using the Windows option
+#### Off campus
+
+To connect via VPN follow instruction in https://oregonstate.teamdynamix.com/TDClient/1935/Portal/KB/ArticleDet?ID=76790 and follow instructions above. 
+
+For instructions on accessing ONID Drive from a Windows or a Mac off campus check the articles in [this OSU page](https://oregonstate.teamdynamix.com/TDClient/KB/ArticleDet?ID=45671). 
+
+
 
 You will need to install MATLAB or  to do this lesson. If you are an OSU faculty, staff or student, you have several options to install Matlab:
 
