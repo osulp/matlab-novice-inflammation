@@ -39,6 +39,13 @@ You will also need to download some data, which we will analyze using MATLAB:
 ### Data download
 When you use MATLAB via Citrix MATLAB will only see the folders in your ONID Drive space. Unfortunately there is no way to have MATLAB access the files in your local computer. To access your ONID storage space from your personal computer do the following:
 
+#### Via Citrix
+
+* Open the Chrome app on Citrix Apps here: http://apps.oregonstate.edu 
+* Navigate to this lesson and download [matlab-novice-inflammation.zip]({{ page.root}}/data/matlab-novice-inflammation.zip). The file will appear at the bottom of the page. Click on the arrow and choose "Show in folder". (the file will be downloaded in Network/onid-fs.onid.oregonstate.edu/youronidname/Profile/Downloads/)
+* On the explorer folder right click on the file matlab-novice-inflammation. You will get a Windows Security message. Click OK. Chose Copy.
+* Through the navigation panel on the left navigate to This PC -> ONID Home (Z:). Create a folder called *matlab-novice-inflammation*. Inside the folder right click and choose Paste. 
+
 #### Windows On-Campus 
 Find instructions in [this OSU article](https://oregonstate.teamdynamix.com/TDClient/KB/ArticleDet?ID=45710)
 
