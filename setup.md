@@ -14,7 +14,7 @@ You will need access to MATLAB to follow this lesson. MATLAB is a MathWorks prod
 ## If you use your own computer and you want to install MATLAB in it. 
 
 ### MATLAB installation
-You can get a license through OSU following the instructions in [https://is.oregonstate.edu/service/software/matlab](https://is.oregonstate.edu/service/software/matlab). 
+You can get a license through OSU following the instructions in [https://oregonstate.teamdynamix.com/TDClient/1935/Portal/KB/ArticleDet?ID=97172](https://oregonstate.teamdynamix.com/TDClient/1935/Portal/KB/ArticleDet?ID=97172). 
 
 ### Data download for the class
 You will also need to download some data, which we will analyze using MATLAB:
